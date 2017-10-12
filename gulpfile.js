@@ -11,8 +11,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     wrap = require('gulp-wrap'),
     notify = require('gulp-notify'),
-    gutil = require('gulp-util'),
-    livereload = require('gulp-livereload'),
+    gutil = require('gulp-util')
     rename = require('gulp-rename');
 
 
@@ -71,9 +70,7 @@ gulp.task('handlebars', function () {
     }));
 });
 
-
-
-//Final Watch Command
+//Watch Command
 gulp.task('watch', function () {
 
   //Watch .scss files
@@ -83,6 +80,9 @@ gulp.task('watch', function () {
   gulp.watch('App/js/**/*.js', ['scripts']);
 
   //Watch handlebar templates
-  gulp.watch('App/js/templates/*.hbs', ['handlebars']);
+  gulp.watch('Templates/*.hbs', ['handlebars']);
 
 });
+
+//Default Command 
+gulp.task('default', ['watch']);
